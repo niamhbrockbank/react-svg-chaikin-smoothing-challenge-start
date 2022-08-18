@@ -65,7 +65,12 @@ export function SmoothedShape({
         {/* smoothed points */}
         {shouldShowSmoothed &&
           ptsSmoothed.map((pt) => (
-            <circle cx={pt.x} cy={pt.y} r="0.5" fill={palette[0]} />
+            <circle
+              cx={pt.x}
+              cy={pt.y}
+              r="0.5"
+              fill={palette[0]}
+            />
           ))
         }
       </svg>
