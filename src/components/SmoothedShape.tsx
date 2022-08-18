@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { generateShape } from '../shapes';
 import { smoothShape } from '../smoothShape';
 
