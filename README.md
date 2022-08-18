@@ -1,5 +1,3 @@
 # Chaikin smoothing challenge start
 
-### create-react-app
-
-This app was created with create-react-app
+[Example of the completed app](https://react-svg-chaikin-smoothing-demo.netlify.app/)
