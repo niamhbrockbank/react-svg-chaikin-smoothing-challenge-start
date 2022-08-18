@@ -10,7 +10,7 @@ export default function App() {
   const [shouldShowOriginal, setShouldShowOriginal] = React.useState(true);
   return (
     <div className="container">
-      <h1>Chaikin smoothing demo</h1>
+      <h1>Chaikin smoothing</h1>
       <div className="controls">
         <SmoothedShape
           maxRadius={100}
