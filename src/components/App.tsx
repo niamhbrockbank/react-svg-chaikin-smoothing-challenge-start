@@ -8,6 +8,7 @@ export default function App() {
   const [numVertices, setNumVertices] = React.useState(4);
   const [numIterations, setNumIterations] = React.useState(2);
   const [shouldShowOriginal, setShouldShowOriginal] = React.useState(true);
+  const [shouldShowSmoothed, setShouldShowSmoothed] = React.useState(true);
   return (
     <div className="container">
       <h1>Chaikin smoothing</h1>
@@ -17,6 +18,7 @@ export default function App() {
           numIterations={numIterations}
           numVertices={numVertices}
           shouldShowOriginal={shouldShowOriginal}
+          shouldShowSmoothed={shouldShowSmoothed}
           seed={seed}
         />
         Seed:{' '}
@@ -52,6 +54,14 @@ export default function App() {
             setShouldShowOriginal((p) => !p);
           }}
           value={shouldShowOriginal}
+        />
+        <br />
+        <Checkbox
+          label="show smoothed shape"
+          onChange={() => {
+            setShouldShowSmoothed((p) => !p);
+          }}
+          value={shouldShowSmoothed}
         />
       </div>
     </div>

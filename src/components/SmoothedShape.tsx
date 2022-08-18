@@ -10,6 +10,7 @@ interface SmoothedShapeProps {
   seed: number,
   numVertices: number,
   shouldShowOriginal: boolean,
+  shouldShowSmoothed: boolean
 }
 export function SmoothedShape({
   maxRadius,
@@ -17,6 +18,7 @@ export function SmoothedShape({
   seed,
   numVertices,
   shouldShowOriginal,
+  shouldShowSmoothed
 }: SmoothedShapeProps) {
   const rng = seedrandom(seed);
   const pts = generateShape(numVertices, maxRadius, rng);
@@ -52,18 +54,20 @@ export function SmoothedShape({
               fill="transparent"
             />
           ))}
-
         {/* smoothed path */}
-        <path
-          d={makePathCmd(ptsSmoothed)}
-          stroke={palette[1]}
-          fill="transparent"
-        />
-
+        {shouldShowSmoothed &&
+          < path
+            d={makePathCmd(ptsSmoothed)}
+            stroke={palette[1]}
+            fill="transparent"
+          />
+        }
         {/* smoothed points */}
-        {ptsSmoothed.map((pt) => (
-          <circle cx={pt.x} cy={pt.y} r="0.5" fill={palette[0]} />
-        ))}
+        {shouldShowSmoothed &&
+          ptsSmoothed.map((pt) => (
+            <circle cx={pt.x} cy={pt.y} r="0.5" fill={palette[0]} />
+          ))
+        }
       </svg>
     </div>
   );
